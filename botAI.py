@@ -59,7 +59,3 @@ with st.container():
             st.chat_message("assistant").write(msg)
         i = i + 1
 
-if st.button("Finalizar"):
-    pid = os.getpid()
-    p = psutil.Process(pid)
-    p.terminate()
