@@ -60,4 +60,6 @@ with st.container():
         i = i + 1
 
 if st.button("Finalizar"):
-    keyboard.press_and_release('ctrl+w')
+    pid = os.getpid()
+    p = psutil.Process(pid)
+    p.terminate()
