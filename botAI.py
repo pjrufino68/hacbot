@@ -23,7 +23,17 @@ hide_st_style = """
             """
 st.set_page_config(page_title="hacBot responde!!!")
 st.markdown(hide_st_style, unsafe_allow_html=True)
-st.write("# Dicas & dúvidas HAC")
+
+st.markdown(
+    """
+    <style>
+    footer {visibility: hidden;}
+    .reportview-container .main footer {visibility: hidden;}
+    </style>
+    """, 
+    unsafe_allow_html=True
+)
+st.write("# Dicas Hospedagem & Turismo")
 
 client = OpenAI(api_key=os.getenv("chaveApi"))
 
