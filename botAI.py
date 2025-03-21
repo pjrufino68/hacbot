@@ -1,5 +1,4 @@
 import streamlit as st
-import speech_recognition as sr
 import openai
 import keyboard
 import os
@@ -50,25 +49,6 @@ def enviarIA(textoRecebido, _lista):
     lista.append(response)
     return response.choices[0].message.content
 
-def reconhecer_voz():
-    # Inicializa o reconhecedor de voz
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.write("Por favor, fale agora...")
-        audio = r.listen(source)
-    
-    try:
-        # Converte áudio em texto
-        texto = r.recognize_google(audio, language="pt-BR")
-        st.write(f"Você : {texto}")
-        return texto
-    except sr.UnknownValueError:
-        st.write("Não entendi o áudio.")
-        return ""
-    except sr.RequestError:
-        st.write("Erro na solicitação ao serviço de reconhecimento de voz.")
-        return ""
-    
 with st.container():
     i = 0
     texto = ""
