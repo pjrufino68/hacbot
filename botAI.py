@@ -75,15 +75,7 @@ with st.container():
     texto_voz = ""
 
     while True:
-        forma = st.radio("", ["Escrever", "Falar :studio_microphone:"], 
-            horizontal=True, key=f'{i}'
-        )
-
-        if forma == "Escrever":
-            texto = st.text_input("", placeholder="Faça sua pergunta", key=f'texto_{i}')
-        else:
-            texto_voz = reconhecer_voz()
-            texto = texto_voz
+        texto = st.text_input("", placeholder="Faça sua pergunta", key=f'texto_{i}')
 
         if texto == "fim" or len(texto) < 1:
             break
